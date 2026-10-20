@@ -231,6 +231,7 @@ if (seal) {
         if (envelopeOpened) return;
 
         envelopeOpened = true;
+        startBackgroundMusic();
         if (envelopeWrapper) {
             envelopeWrapper.classList.add("open");
         }
