@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pentru tine 🤍</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   
+<!-- =====================================
+     INTRO - PLICUL CU SCRISOAREA
+===================================== -->
+
+<main class="intro" id="intro">
+
+    <!-- TITLUL DE SUS -->
+
+    <div class="intro-text" id="introText">
+
+        <p class="small-text">
+            O mică surpriză
+        </p>
+
+        <h1>
+            Pentru voi
+        </h1>
+
+        <p class="subtitle">
+            Unele povești merită așteptate...
+        </p>
+
+    </div>
+
+
+<!-- CUTIA DE CADOU 3D -->
+
+<div class="envelope-wrapper gift-box-wrapper" id="envelopeWrapper">
+
+    <div class="gift-scene">
+
+        <!-- Corpul cutiei -->
+        <div class="gift-cube">
+
+            <div class="gift-face gift-front"></div>
+            <div class="gift-face gift-right"></div>
+            <div class="gift-face gift-left"></div>
+            <div class="gift-face gift-back"></div>
+            <div class="gift-face gift-bottom"></div>
+
+        </div>
+
+        <!-- Capacul cutiei -->
+        <div class="gift-lid">
+
+            <div class="gift-lid-top"></div>
+            <div class="gift-lid-front"></div>
+            <div class="gift-lid-right"></div>
+
+            <!-- Sigiliul cu bebelusul -->
+            <button
+                class="seal gift-seal"
+                id="seal"
+                type="button"
+                aria-label="Deschide cutia"
+            >
+                <img
+                    src="images/baby-seal.png"
+                    alt=""
+                    class="baby-seal-image"
+                >
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- SCRISOAREA -->
+
+    <div class="letter gift-letter" id="letter">
+
+        <div class="letter-content">
+
+            <p class="letter-line line-1">
+                Unele dorințe se împlinesc repede...
+            </p>
+
+            <p class="letter-line line-2">
+                Altele au nevoie de timp.
+            </p>
+
+            <p class="letter-line line-3">
+                De răbdare.
+            </p>
+
+            <p class="letter-line line-4">
+                De speranță.
+            </p>
+
+            <p class="letter-line line-5">
+                Și de foarte multă iubire.
+            </p>
+
+            <div class="little-divider"></div>
+
+            <p class="letter-final">
+                Iar unele minuni merită așteptate oricât.
+            </p>
+
+            <button
+                class="start-story"
+                id="startStory"
+                type="button"
+            >
+                Începe povestea
+                <span>↓</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- TEXTUL DE SUB PLIC -->
+
+    <p class="open-hint" id="openHint">
+        Atinge sigiliul pentru a deschide
+    </p>
+
+</main>
+
+
+
+    <!--
+        AICI vom construi în pasul următor
+        restul poveștii.
+    -->
+    <section class="story" id="story">
+
+       <div class="story-placeholder">
+
+    <p class="story-small">
+        Și apoi, într-o zi...
+    </p>
+
+    <h2>
+        visul a devenit realitate.
+    </h2>
+
+</div>
+
+    </section>
+
+
+<!-- =====================================
+     VIDEO FULLSCREEN
+===================================== -->
+
+<!-- VIDEOCLIP INTRODUCTIV -->
+
+<section id="introVideoSection" class="intro-video-section">
+
+    <video
+        id="introVideo"
+        playsinline
+        preload="auto"
+    >
+        <source src="videos/intro-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- TEXT PESTE VIDEOCLIP -->
+
+    <div class="intro-video-overlay">
+
+        <p class="intro-video-small-text">
+            A LITTLE MIRACLE IS ON ITS WAY
+        </p>
+
+        <h1 class="intro-video-title">
+            Baby Loading...
+        </h1>
+
+        <p class="intro-video-heart">
+            ♡
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     MOMENTUL TESTULUI DE SARCINĂ
+===================================== -->
+<section
+    class="pregnancy-moment"
+    id="pregnancyMoment"
+>
+
+
+   <div class="pregnancy-intro reveal">
+
+    <p class="section-eyebrow">
+        UN MOMENT. DOUĂ LINII.
+    </p>
+
+    <h2>
+        Și o lume întreagă<br>
+        pe cale să se schimbe.
+    </h2>
+
+</div>
+
+
+    <!-- TEST DE SARCINĂ -->
+
+    <div class="test-scene reveal" id="testScene">
+
+        <div class="pregnancy-test">
+
+            <div class="test-cap"></div>
+
+            <div class="test-body">
+
+                <div class="test-window">
+
+                    <!-- Linia 1 -->
+                    <span class="test-line control-line"></span>
+
+                    <!-- Linia 2 -->
+                    <span class="test-line positive-line"></span>
+
+                </div>
+
+                <div class="test-heart">
+                    ♡
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MESAJ DUPĂ TEST -->
+
+    <div class="two-lines-message reveal">
+
+        <h3>
+            Două liniuțe.
+        </h3>
+
+        <p>
+            Atât de mici...
+        </p>
+
+        <p>
+            și totuși suficient de mari
+            încât să schimbe o lume întreagă.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     DRUMUL ÎN FOTOGRAFII
+===================================== -->
+
+<section class="memories">
+
+    <!-- POZA CU EI -->
+
+    <div class="memory memory-left reveal">
+
+       <div class="photo-placeholder">
+    <img
+        src="images/impreuna.jpg"
+        alt="O amintire împreună"
+        class="memory-photo"
+    >
+</div>
+
+        <div class="memory-text">
+
+            <span>01</span>
+
+            <p>
+                Și dintr-odată, visul vostru
+                începea să devină realitate.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- POZA CU BURTICA -->
+
+    <div class="memory memory-right reveal">
+
+       <div class="photo-placeholder">
+    <img
+        src="images/burtica.jpg"
+        alt="O amintire din timpul sarcinii"
+        class="memory-photo"
+    >
+</div>
+
+        <div class="memory-text">
+
+            <span>02</span>
+
+            <p>
+                Cu fiecare zi,
+                puțin mai aproape de puiul vostru.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- POZA 3 - UN ALT MOMENT DIN SARCINĂ -->
+
+<div class="memory memory-left reveal">
+
+   <div class="photo-placeholder">
+
+    <img
+        src="images/sarcina.jpg"
+        alt="O amintire din timpul sarcinii"
+        class="memory-photo"
+    >
+
+</div>
+
+    <div class="memory-text">
+
+        <span>03</span>
+
+        <p>
+            Și cu fiecare zi,
+            povestea voastră crește
+            odată cu el.
+        </p>
+
+    </div>
+
+</div>
+
+
+    <!-- ECOGRAFIA -->
+
+    <div class="ultrasound-moment reveal">
+
+        <div class="ultrasound-title">
+
+            <p class="section-eyebrow">
+                ȘI PENTRU PRIMA DATĂ...
+            </p>
+
+            <h2>
+                l-ați putut vedea.
+            </h2>
+
+        </div>
+
+
+       <div class="ultrasound-photo">
+
+    <img
+        src="images/ecografie.jpg"
+        alt="Ecografie"
+        class="ultrasound-image"
+    >
+
+</div>
+
+
+        <p class="ultrasound-message">
+            Atât de mic.<br>
+            Atât de așteptat.<br>
+            <em>Deja atât de iubit.</em>
+        </p>
+
+    </div>
+    
+
+<!-- =====================================
+     TRANZIȚIE SPRE URMĂTORUL CAPITOL
+===================================== -->
+
+<div class="waiting-transition reveal">
+
+    <p class="section-eyebrow">
+        ȘI DE ATUNCI...
+    </p>
+
+    <h2>
+        fiecare zi înseamnă<br>
+        încă o zi mai aproape de el.
+    </h2>
+
+    <div class="waiting-line"></div>
+
+    <p class="waiting-text">
+        Mai aproape de prima întâlnire.<br>
+        De prima îmbrățișare.<br>
+        De momentul în care visul
+        va fi, în sfârșit, în brațele voastre.
+    </p>
+
+</div>
+
+</section>
+
+<!-- =====================================
+     MESAJ DE LA IOANA
+===================================== -->
+
+<section class="from-ioana">
+
+    <div class="from-ioana-content reveal">
+
+        <p class="section-eyebrow">
+            MAI AM CEVA SĂ-ȚI SPUN...
+        </p>
+
+        <p class="ioana-intro">
+            Pentru că, dincolo de toate fotografiile,
+            de toate emoțiile și de tot ce urmează,
+            vreau să știi cât de mult mă bucur
+            că pot să trăiesc, măcar puțin,
+            toate aceste momente alături de tine.
+        </p>
+
+        <p class="ioana-next">
+            Așa că următoarele rânduri sunt
+            de la mine, pentru tine.
+        </p>
+
+        
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     SCRISOAREA IOANEI
+===================================== -->
+
+<section class="ioana-letter-section">
+
+    <div class="ioana-letter reveal">
+
+        <div class="letter-decoration">
+            ♡
+        </div>
+
+        <p>
+            Dacă ar trebui să aleg un singur lucru pe care
+            să ți-l spun, ar fi cât de fericită sunt să te
+            văd trăind, în sfârșit, visul pe care l-ai
+            purtat atât de mult timp în suflet.
+        </p>
+
+        <p>
+            Știu cât de mult ți-ai dorit această minune,
+            cât ai sperat și câtă iubire ai avut de oferit
+            chiar înainte să știi că el este acolo.
+        </p>
+
+        <p>
+            Mă bucur enorm că viața ne-a făcut să ne
+            întâlnim și că pot să te numesc prietena mea.
+            Ești unul dintre acei oameni pe care îi păstrezi
+            aproape de suflet, iar bucuria ta a ajuns să fie,
+            într-un fel, și bucuria mea.
+        </p>
+
+        <p>
+            Abia aștept să te văd în rolul pe care ți l-ai
+            dorit atât de mult și să văd toate momentele
+            frumoase care vă așteaptă.
+        </p>
+
+        <p>
+            Iar într-o zi, când băiețelul tău va fi
+            suficient de mare să înțeleagă, sper să știe
+            cât de dorit, cât de așteptat și cât de iubit
+            a fost cu mult înainte să ajungă în brațele
+            voastre.
+        </p>
+
+        <p class="ioana-letter-ending">
+            Sunt atât de fericită pentru tine
+            și pentru tot ce urmează.
+        </p>
+
+        <div class="ioana-letter-signature">
+
+            <span>Cu drag,</span>
+
+            <strong>Ioana</strong>
+
+            <span class="letter-heart">♡</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     SURPRIZA VIDEO
+===================================== -->
+
+<section class="video-surprise">
+
+    <div class="video-surprise-content reveal">
+
+        <p class="section-eyebrow">
+            CREDEAI CĂ ASTA A FOST TOT?
+        </p>
+
+        <h2>
+            Mai sunt câteva lucruri
+            pe care nu le poți pune
+            într-o fotografie...
+        </h2>
+
+       
+
+        <p class="video-small-text">
+            Câteva persoane dragi
+            au vrut să-ți spună ceva.
+        </p>
+
+      <a
+    href="#videos"
+    class="video-link"
+    id="openVideos"
+>
+    Descoperă mesajele
+    <span>→</span>
+</a>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     VIDEO-URI
+===================================== -->
+
+<section class="videos-section" id="videos">
+
+    <div class="videos-intro reveal">
+
+        <p class="section-eyebrow">
+            PENTRU TINE
+        </p>
+
+        <h2>
+            Câteva mesaje<br>
+            din suflet.
+        </h2>
+
+        <p>
+            Dă play atunci când ești pregătită.
+        </p>
+
+        <div class="scroll-video">
+            ↓
+        </div>
+
+    </div>
+
+
+<!-- =====================================
+     VIDEO 01 - IOANA
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">01</p>
+
+    <h3>Ioana ♡</h3>
+
+    <p class="video-description">
+        Unele prietenii devin parte din cele mai frumoase povești.
+        Iar Ioana are câteva cuvinte pentru tine.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul Ioanei">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/ioana.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 02 - PARINTII
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">02</p>
+
+    <h3>Părinții tăi ♡</h3>
+
+    <p class="video-description">
+        De la cei care te-au iubit încă din prima clipă...
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul părinților">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/parinti.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 03 - CUMNATA
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">03</p>
+
+    <h3>Cumnata ta ♡</h3>
+
+    <p class="video-description">
+        Un gând cald, din partea familiei.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul cumnatei">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/cumnata.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 04 - FRATELE
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">04</p>
+
+    <h3>Fratele tău ♡</h3>
+
+    <p class="video-description">
+        Din amintirile copilăriei, până la bucuria de astăzi...
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul fratelui">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/frate.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 05 - SORA SI NEPOTICA
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">05</p>
+
+    <h3>Sora ta și nepoțica ♡</h3>
+
+    <p class="video-description">
+        Două suflete dragi îți trimit toată iubirea lor.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul surorii și nepoțelei">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/sora-nepotica.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 06 - ANGLIA
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">06</p>
+
+    <h3>Cu drag, din Anglia ♡</h3>
+
+    <p class="video-description">
+        Distanța nu poate sta în calea unei prietenii adevărate.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul din Anglia">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/anglia.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 07 - BIA
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">07</p>
+
+    <h3>Verișoara Bia ♡</h3>
+
+    <p class="video-description">
+        O bucurie împărtășită din suflet.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul Biei">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/bia.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 08 - ALY
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">08</p>
+
+    <h3>Aly ♡</h3>
+
+    <p class="video-description">
+        Și Aly are câteva cuvinte doar pentru tine.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul lui Aly">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/aly.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 09 - MIOARA
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">09</p>
+
+    <h3>Mioara ♡</h3>
+
+    <p class="video-description">
+        Încă un gând frumos, de la un om drag.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul Mioarei">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/mioara.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 10 - ANDREEA SI CARINA
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">10</p>
+
+    <h3>Andreea și Carina ♡</h3>
+
+    <p class="video-description">
+        Două voci dragi, un mesaj plin de iubire.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul Andreei și Carinei">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/andreea-carina.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 11 - ROXANA
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">11</p>
+
+    <h3>Roxana ♡</h3>
+
+    <p class="video-description">
+        Bucuria ta a ajuns și în sufletul Roxanei.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul Roxanei">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/roxana.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 12 - PETRO SI PATRIK
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">12</p>
+
+    <h3>Petru și Patrik ♡</h3>
+
+    <p class="video-description">
+        Un mesaj special, pregătit cu mult drag.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul lui Petro și Patrik">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/petro-patrik.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     VIDEO 13 - IANCU SI IVAN
+===================================== -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">13</p>
+
+    <h3>Iancu și Ivan ♡</h3>
+
+    <p class="video-description">
+        Iar cei mici au și ei ceva să-ți spună...
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul lui Iancu și Ivan">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/iancu-ivan.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+<!-- fina Ionela- INIMIOARĂ 3D -->
+
+<div class="video-message reveal">
+
+    <p class="video-number">14</p>
+
+    <h3>fina Ionela♡</h3>
+
+    <p class="video-description">
+        Un mesaj special, pregătit cu mult drag pentru tine.
+    </p>
+
+    <div class="video-frame">
+
+        <button class="video-cover" type="button"
+                aria-label="Pornește mesajul video">
+            <span class="video-heart">♥</span>
+            <span class="video-cover-play">▶</span>
+            <span class="video-cover-text">
+                Atinge pentru a asculta mesajul
+            </span>
+        </button>
+
+        <video controls playsinline preload="none">
+            <source src="videos/cumnata-fina.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+<!-- =====================================
+     GALERIE FOTO
+===================================== -->
+
+<section id="photoGallery" class="photo-gallery">
+
+    <div class="gallery-intro reveal">
+        <p class="section-eyebrow">AMINTIRI PREȚIOASE</p>
+
+        <h2>O viață întreagă de iubire</h2>
+
+        <p>
+            Atâtea clipe frumoase...<br>
+            și cele mai frumoase încă urmează. ♡
+        </p>
+    </div>
+
+<div class="gallery-grid">
+
+    <!-- RANDUL 1 -->
+
+    <img src="images/galerie/poza-01.jpg"
+         alt="Amintire 1" loading="lazy">
+
+    <img src="images/galerie/poza-02.jpg"
+         alt="Amintire 2" loading="lazy">
+
+
+    <!-- RANDUL 2 -->
+
+    <img src="images/galerie/poza-03.jpg"
+         alt="Amintire 3" loading="lazy">
+
+    <img src="images/galerie/poza-04.jpg"
+         alt="Amintire 4" loading="lazy">
+
+
+    <!-- RANDUL 3 -->
+
+    <img src="images/galerie/poza-05.jpg"
+         alt="Amintire 5" loading="lazy">
+
+    <img src="images/galerie/poza-06.jpg"
+         alt="Amintire 6" loading="lazy">
+
+
+    <!-- RANDUL 4 -->
+
+    <img src="images/galerie/poza-07.jpg"
+         alt="Amintire 7" loading="lazy">
+
+    <img src="images/galerie/poza-08.jpg"
+         alt="Amintire 8" loading="lazy">
+
+
+    <!-- RANDUL 5 -->
+
+    <img src="images/galerie/poza-09.jpg"
+         alt="Amintire 9" loading="lazy">
+
+    <img src="images/galerie/poza-10.jpg"
+         alt="Amintire 10" loading="lazy">
+
+
+    <!-- RANDUL 6 -->
+
+    <img src="images/galerie/poza-11.jpg"
+         alt="Amintire 11" loading="lazy">
+
+    <img src="images/galerie/poza-12.jpg"
+         alt="Amintire 12" loading="lazy">
+
+
+    <!-- RANDUL 7 -->
+
+    <img src="images/galerie/poza-13.jpg"
+         alt="Amintire 13" loading="lazy">
+
+    <img src="images/galerie/poza-14.jpg"
+         alt="Amintire 14" loading="lazy">
+
+
+    <!-- RANDUL 8 -->
+
+    <img src="images/galerie/poza-15.jpg"
+         alt="Amintire 15" loading="lazy">
+
+    <img src="images/galerie/poza-16.jpg"
+         alt="Amintire 16" loading="lazy">
+
+
+<!-- RANDUL 9 -->
+
+<img src="images/galerie/poza-17.jpg"
+     alt="Amintire 17" loading="lazy">
+
+<img src="images/galerie/poza-18.jpg"
+     alt="Amintire 18" loading="lazy">
+
+
+<!-- RANDUL 10 -->
+
+<img src="images/galerie/poza-19.jpg"
+     alt="Amintire 19" loading="lazy">
+
+<img src="images/galerie/poza-20.jpg"
+     alt="Amintire 20" loading="lazy">
+
+
+<!-- RANDUL 11 -->
+
+<img src="images/galerie/poza-21.jpg"
+     alt="Amintire 21" loading="lazy">
+
+<img src="images/galerie/poza-22.jpg"
+     alt="Amintire 22" loading="lazy">
+
+</div>
+
+
+</section>
+
+
+    <!-- FINAL VIDEO -->
+
+   <!-- =====================================
+     FINALUL POVEȘTII
+===================================== -->
+
+<div class="videos-ending reveal">
+
+    <p class="section-eyebrow">
+        ȘI TOTUȘI...
+    </p>
+
+    <h2>
+        povestea nu se termină aici.
+    </h2>
+
+    <p>
+        Mai avem un ultim lucru
+        să vă spunem.
+    </p>
+
+</div>
+
+
+<section class="final-story" id="final">
+
+    <div class="final-content reveal">
+
+
+        <!-- BOTOȘEI -->
+
+        <div class="baby-shoes">
+
+            <div class="baby-shoe shoe-left">
+                <span></span>
+            </div>
+
+            <div class="baby-shoe shoe-right">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <p class="final-small">
+            DE FAPT...
+        </p>
+
+
+        <h2>
+            abia acum începe.
+        </h2>
+
+
+        <div class="final-line"></div>
+
+
+        <p class="final-text">
+            Peste puțin timp, toate așteptările,
+            toate emoțiile și toate visele
+            vor avea un chip.
+        </p>
+
+
+        <p class="final-text">
+            Un băiețel atât de dorit,
+            atât de așteptat și deja
+            atât de iubit.
+        </p>
+
+
+        <p class="final-wish">
+            Să vă fie viața împreună
+            cea mai frumoasă poveste.
+        </p>
+
+
+        <div class="final-heart">
+            ♡
+        </div>
+
+
+        <p class="final-signature">
+            Cu drag, pentru voi.
+        </p>
+
+    </div>
+
+</section>
+</section>
+
+<audio
+    id="backgroundMusic"
+    preload="auto"
+    loop
+>
+    <source
+        src="audio/background-music.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

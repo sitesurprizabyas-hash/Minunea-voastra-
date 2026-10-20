@@ -1,0 +1,3751 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #f8f3eb;
+
+    color: #62574d;
+
+    font-family: "Montserrat", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.intro {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 45px 20px;
+
+    text-align: center;
+background:
+    radial-gradient(
+        circle at 50% 10%,
+        #faf5ed 0%,
+        #f4eadf 40%,
+        #eee2d3 100%
+    );}
+
+
+/* ========================================
+   TITLUL DE SUS
+======================================== */
+
+.intro-text {
+    margin-bottom: 45px;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    animation: fadeDown 1.2s ease forwards;
+}
+
+.small-text {
+    margin-bottom: 9px;
+
+    font-size: 0.7rem;
+    font-weight: 300;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #a79583;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3.2rem, 8vw, 5rem);
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    color: #65584c;
+}
+
+.subtitle {
+    margin-top: 17px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.25rem;
+    font-style: italic;
+
+    color: #998775;
+}
+
+
+/* ========================================
+   PLIC
+======================================== */
+
+.envelope-wrapper {
+    width: min(390px, 88vw);
+
+    perspective: 1400px;
+
+    animation: envelopeAppear 1.4s ease forwards;
+
+    transition:
+        width 1s ease,
+        transform 1s ease;
+}
+
+.envelope {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1.55 / 1;
+
+    filter:
+        drop-shadow(
+            0 20px 22px
+            rgba(91, 69, 48, 0.13)
+        );
+}
+
+
+/* Interiorul plicului */
+
+.envelope-inside {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 8px;
+
+    background: #dac9b3;
+}
+
+
+/* ========================================
+   SCRISOAREA
+======================================== */
+
+.letter {
+    position: absolute;
+
+    width: 86%;
+    height: 82%;
+
+    left: 7%;
+    bottom: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px 22px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffefa,
+            #fffaf3
+        );
+
+    box-shadow:
+        0 8px 25px rgba(77, 59, 42, 0.1);
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    transition:
+        transform 1.3s cubic-bezier(.65, 0, .35, 1),
+        width 1.2s ease,
+        height 1.2s ease,
+        left 1.2s ease,
+        bottom 1.2s ease,
+        padding 1.2s ease,
+        box-shadow 1.2s ease;
+}
+
+
+/* Conținutul scrisorii */
+
+.letter-content {
+    width: 100%;
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+}
+
+.letter-line,
+.letter-final {
+    font-family: "Cormorant Garamond", serif;
+
+    color: #766657;
+}
+
+
+/* Textele principale */
+
+.letter-line {
+    margin-bottom: 8px;
+
+    font-size: 1.15rem;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+}
+
+
+/* Linia decorativă */
+
+.little-divider {
+    width: 35px;
+    height: 1px;
+
+    margin: 18px auto;
+
+    background: #cbb9a5;
+
+    opacity: 0;
+}
+
+
+/* Ultimul mesaj */
+
+.letter-final {
+    font-size: 1.25rem;
+    font-style: italic;
+
+    line-height: 1.35;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+}
+
+
+/* ========================================
+   CORPUL PLICULUI
+======================================== */
+
+.envelope-body {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    z-index: 4;
+}
+
+.envelope-body::before {
+    content: "";
+
+    position: absolute;
+
+    width: 72%;
+    height: 150%;
+
+    left: -24%;
+    top: 13%;
+
+    background: #eadfce;
+
+    transform: rotate(45deg);
+}
+
+.envelope-body::after {
+    content: "";
+
+    position: absolute;
+
+    width: 72%;
+    height: 150%;
+
+    right: -24%;
+    top: 13%;
+
+    background: #e4d5c1;
+
+    transform: rotate(-45deg);
+}
+
+
+/* ========================================
+   CLAPETA
+======================================== */
+
+.envelope-flap {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    background: #efe4d4;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 58%
+    );
+
+    transform-origin: top;
+
+    transition:
+        transform 1s cubic-bezier(.65, 0, .35, 1);
+
+    z-index: 6;
+}
+
+
+/* ========================================
+   SIGILIU
+======================================== */
+
+.seal {
+    position: absolute;
+
+    width: 76px;
+    height: 76px;
+
+    left: 50%;
+    top: 52%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.55s ease;
+
+    animation:
+        sealPulse 2.8s ease-in-out infinite;
+}
+
+.seal:hover {
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
+}
+
+.baby-seal-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(88, 106, 112, 0.2)
+        );
+}
+
+
+/* ========================================
+   TEXT SUB PLIC
+======================================== */
+
+.open-hint {
+    margin-top: 35px;
+
+    font-size: 0.68rem;
+    font-weight: 300;
+
+    letter-spacing: 2px;
+
+    color: #a49382;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    animation:
+        breathe 2.5s ease-in-out infinite;
+}
+
+
+/* ========================================
+   PASUL 1 - PLICUL SE DESCHIDE
+======================================== */
+
+.envelope-wrapper.open .seal {
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.4);
+
+    animation: none;
+
+    pointer-events: none;
+}
+
+.envelope-wrapper.open .envelope-flap {
+    transform: rotateX(180deg);
+
+    z-index: 1;
+}
+
+
+/* ========================================
+   PASUL 2 - SCRISOAREA IESE
+======================================== */
+
+
+.envelope-wrapper.letter-out .letter {
+    transform: translateY(-45%);
+    z-index: 8;
+}
+
+/* ========================================
+   PASUL 3 - SCRISOAREA DEVINE MARE
+======================================== */
+
+.envelope-wrapper.letter-focus {
+    width: min(520px, 92vw);
+}
+
+.envelope-wrapper.letter-focus .letter {
+    width: 100%;
+    height: 430px;
+
+    left: 0;
+    bottom: auto;
+    top: 50%;
+
+    padding: 45px 38px;
+
+    transform: translateY(-50%);
+
+    box-shadow:
+        0 20px 50px
+        rgba(84, 63, 43, 0.13);
+
+    z-index: 20;
+}
+
+.envelope-wrapper.letter-focus .letter-content {
+    opacity: 1;
+}
+
+
+/* Ascundem plicul în spatele scrisorii */
+
+.envelope-wrapper.letter-focus .envelope-body,
+.envelope-wrapper.letter-focus .envelope-flap,
+.envelope-wrapper.letter-focus .envelope-inside {
+    opacity: 0;
+
+    transition: opacity 0.8s ease;
+}
+
+
+/* Titlul de sus dispare */
+
+.intro.reading .intro-text {
+    opacity: 0;
+
+    transform: translateY(-20px);
+}
+
+
+/* Hint-ul dispare */
+
+.intro.reading .open-hint {
+    opacity: 0;
+
+    transform: translateY(10px);
+}
+
+
+/* ========================================
+   APARIȚIA TEXTULUI PE RÂND
+======================================== */
+
+.letter-content.show-text .line-1 {
+    animation:
+        revealLine 0.8s ease
+        0.2s forwards;
+}
+
+.letter-content.show-text .line-2 {
+    animation:
+        revealLine 0.8s ease
+        1.1s forwards;
+}
+
+.letter-content.show-text .line-3 {
+    animation:
+        revealLine 0.8s ease
+        2s forwards;
+}
+
+.letter-content.show-text .line-4 {
+    animation:
+        revealLine 0.8s ease
+        2.7s forwards;
+}
+
+.letter-content.show-text .line-5 {
+    animation:
+        revealLine 0.8s ease
+        3.4s forwards;
+}
+
+.letter-content.show-text .little-divider {
+    animation:
+        fadeIn 0.8s ease
+        4.2s forwards;
+}
+
+.letter-content.show-text .letter-final {
+    animation:
+        revealLine 1s ease
+        4.7s forwards;
+}
+
+
+/* ========================================
+   BUTON ÎNCEPE POVESTEA
+======================================== */
+
+.start-story {
+    margin-top: 25px;
+
+    padding: 9px 5px;
+
+    border: none;
+    border-bottom: 1px solid #c7b39e;
+
+    background: transparent;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #8c7967;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.start-story span {
+    display: inline-block;
+
+    margin-left: 7px;
+
+    transition: transform 0.3s ease;
+}
+
+.start-story:hover {
+    color: #65584c;
+
+    border-color: #8c7967;
+}
+
+.start-story:hover span {
+    transform: translateY(4px);
+}
+
+.letter-content.show-text .start-story {
+    animation:
+        revealLine 0.9s ease
+        5.8s forwards;
+}
+
+
+/* ========================================
+   POVESTEA - MOMENTAN DOAR PLACEHOLDER
+======================================== */
+
+.story {
+    min-height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 25px;
+
+    text-align: center;
+
+    background: #f8f3eb;
+}
+
+.story-placeholder {
+    max-width: 650px;
+}
+
+.story-small {
+    margin-bottom: 12px;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #ae9b87;
+}
+
+.story h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.3rem, 6vw, 4rem);
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #6c5e51;
+}
+
+
+/* ========================================
+   ANIMAȚII
+======================================== */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes envelopeAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes sealPulse {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.05);
+    }
+}
+
+
+@keyframes revealLine {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ========================================
+   TELEFON
+======================================== */
+/* ========================================
+   MOD CITIRE SCRISOARE
+======================================== */
+
+.intro.reading {
+    justify-content: center;
+}
+
+.intro.reading .intro-text {
+    opacity: 0;
+    transform: translateY(-30px);
+    pointer-events: none;
+}
+
+.intro.reading .envelope-wrapper {
+    transform: translateY(-20px);
+}
+
+.envelope-wrapper.letter-focus {
+    height: 430px;
+}
+
+.envelope-wrapper.letter-focus .envelope {
+    height: 430px;
+}
+
+.envelope-wrapper.letter-focus .letter {
+    position: absolute;
+    top: 0;
+    bottom: auto;
+
+    transform: none;
+}
+@media (max-width: 600px) {
+
+    .intro {
+        padding: 30px 16px;
+    }
+
+    .intro-text {
+        margin-bottom: 38px;
+    }
+
+    .small-text {
+        font-size: 0.62rem;
+
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .seal {
+        width: 68px;
+        height: 68px;
+    }
+
+    .open-hint {
+        margin-top: 30px;
+
+        font-size: 0.62rem;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* Scrisoarea deschisă */
+
+    .envelope-wrapper.letter-focus {
+        width: 92vw;
+    }
+
+   .envelope-wrapper.letter-focus .letter {
+    height: 410px;
+    padding: 35px 22px;
+    transform: none;
+}
+
+    .letter-line {
+        margin-bottom: 7px;
+
+        font-size: 1.05rem;
+    }
+
+    .letter-final {
+        font-size: 1.15rem;
+    }
+
+    .little-divider {
+        margin: 15px auto;
+    }
+
+    .start-story {
+        margin-top: 20px;
+
+        font-size: 0.6rem;
+
+        letter-spacing: 1.5px;
+    }
+}
+
+
+/* ==========================================
+   FIX FINAL - DESCHIDERE SCRISOARE
+========================================== */
+
+/* Plicul rămâne normal la început */
+
+.envelope-wrapper {
+    position: relative;
+}
+
+
+/* După deschidere */
+
+.envelope-wrapper.show-letter {
+    width: min(520px, 92vw);
+    height: 440px;
+
+    transform: none;
+}
+
+
+/* Ascundem componentele plicului */
+
+.envelope-wrapper.show-letter .envelope-inside,
+.envelope-wrapper.show-letter .envelope-body,
+.envelope-wrapper.show-letter .envelope-flap,
+.envelope-wrapper.show-letter .seal {
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.7s ease;
+}
+
+
+/* Envelope-ul devine container */
+
+.envelope-wrapper.show-letter .envelope {
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: auto;
+
+    filter: none;
+}
+
+
+/* SCRISOAREA */
+
+.envelope-wrapper.show-letter .letter {
+    position: absolute;
+
+    width: 100%;
+    height: 420px;
+
+    left: 0;
+    top: 0;
+    bottom: auto;
+
+    padding: 45px 38px;
+
+    transform: none;
+
+    z-index: 50;
+
+    overflow: visible;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffefa,
+            #fffaf3
+        );
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(84, 63, 43, 0.13);
+
+    animation: showLetterCard 1s ease forwards;
+}
+
+
+/* Conținut */
+
+.envelope-wrapper.show-letter .letter-content {
+    opacity: 1;
+}
+
+
+/* Titlul inițial dispare */
+
+.intro.reading .intro-text {
+    opacity: 0;
+
+    transform: translateY(-25px);
+
+    pointer-events: none;
+}
+
+
+/* Textul de sub plic dispare */
+
+.intro.reading .open-hint {
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* Animația scrisorii */
+
+@keyframes showLetterCard {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(60px)
+            scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ==========================================
+   TELEFON
+========================================== */
+
+@media (max-width: 600px) {
+
+    .envelope-wrapper.show-letter {
+        width: 92vw;
+        height: 430px;
+    }
+
+    .envelope-wrapper.show-letter .letter {
+        width: 100%;
+        height: 410px;
+
+        left: 0;
+        top: 0;
+
+        padding: 35px 22px;
+
+        transform: none;
+    }
+
+}
+/* ==========================================
+   MOMENTUL TESTULUI
+========================================== */
+
+.pregnancy-moment {
+    min-height: auto;
+
+    padding: 120px 20px 70px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f8f3eb,
+            #fbf7f0,
+            #f8f3eb
+        );
+
+    text-align: center;
+}
+
+
+/* INTRO */
+
+.pregnancy-intro {
+    margin-bottom: 100px;
+}
+
+.section-eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 0.72rem;
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    color: #8f7965;
+}
+
+.pregnancy-intro h2,
+.ultrasound-title h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.7rem, 7vw, 4.7rem);
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #6f6052;
+}
+
+
+/* ==========================================
+   TESTUL DE SARCINĂ
+========================================== */
+
+.test-scene {
+    min-height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Test complet */
+
+.pregnancy-test {
+    position: relative;
+
+    width: min(430px, 88vw);
+    height: 72px;
+
+    display: flex;
+
+    transform: rotate(-4deg);
+
+    filter:
+        drop-shadow(
+            0 15px 18px
+            rgba(92, 74, 55, 0.13)
+        );
+}
+
+
+/* Capac */
+
+.test-cap {
+    width: 25%;
+    height: 100%;
+
+    border-radius:
+        35px 5px 5px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c9dce4,
+            #a9c8d5
+        );
+
+    border-right:
+        3px solid rgba(255,255,255,0.6);
+}
+
+
+/* Corp */
+
+.test-body {
+    position: relative;
+
+    width: 75%;
+    height: 100%;
+
+    border-radius:
+        5px 36px 36px 5px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffefa,
+            #eee9e1
+        );
+}
+
+
+/* Fereastra */
+
+.test-window {
+    position: absolute;
+
+    width: 100px;
+    height: 40px;
+
+    left: 42%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    border-radius: 20px;
+
+    background: #f4f0ea;
+
+    box-shadow:
+        inset 0 2px 7px
+        rgba(85, 70, 55, 0.12);
+}
+
+
+/* Liniuțele */
+
+.test-line {
+    width: 4px;
+    height: 25px;
+
+    border-radius: 5px;
+
+    background: #b68b91;
+
+    opacity: 0;
+
+    transform: scaleY(0);
+}
+
+
+/* Inimioara */
+
+.test-heart {
+    position: absolute;
+
+    right: 30px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+
+    color: #abc8d4;
+}
+
+
+/* ==========================================
+   ANIMAȚIA CELOR DOUĂ LINII
+========================================== */
+
+.test-scene.animate-test
+.control-line {
+    animation:
+        showTestLine
+        0.6s ease
+        0.5s forwards;
+}
+
+.test-scene.animate-test
+.positive-line {
+    animation:
+        showTestLine
+        0.8s ease
+        1.7s forwards;
+}
+
+
+@keyframes showTestLine {
+
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+}
+
+
+/* ==========================================
+   MESAJUL CELOR DOUĂ LINII
+========================================== */
+
+.two-lines-message {
+    max-width: 520px;
+
+    margin: 55px auto 0;
+}
+
+.two-lines-message h3 {
+    margin-bottom: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.7rem, 7vw, 4.2rem);
+    font-weight: 400;
+
+    color: #6d5e50;
+}
+
+.two-lines-message p {
+    margin: 7px 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.3rem;
+
+    line-height: 1.5;
+
+    color: #95816e;
+}
+
+
+/* ==========================================
+   AMINTIRI / FOTOGRAFII
+========================================== */
+
+.memories {
+    padding:
+        45px 7vw
+        160px;
+
+    background: #f8f3eb;
+}
+
+
+/* Fiecare moment */
+
+.memory {
+    max-width: 1000px;
+
+    margin:
+        0 auto
+        180px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* Alternăm direcția */
+
+.memory-right {
+    flex-direction: row-reverse;
+}
+
+
+/* Placeholder fotografie */
+
+.photo-placeholder {
+    width: min(480px, 55vw);
+
+    aspect-ratio: 4 / 5;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    border:
+        1px solid
+        rgba(154, 133, 111, 0.22);
+
+    background:
+        linear-gradient(
+            145deg,
+            #eee4d6,
+            #f5ede3
+        );
+
+    box-shadow:
+        0 25px 50px
+        rgba(84, 66, 47, 0.08);
+}
+
+
+/* Ușoară rotație ca fotografie */
+
+.memory-left
+.photo-placeholder {
+    transform: rotate(-2deg);
+}
+
+.memory-right
+.photo-placeholder {
+    transform: rotate(2deg);
+}
+
+
+.photo-placeholder span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.1rem;
+    font-style: italic;
+
+    color: #b09c88;
+}
+
+
+/* Text lângă fotografie */
+
+.memory-text {
+    max-width: 300px;
+}
+
+.memory-text span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+
+    color: #b7a38f;
+}
+
+.memory-text p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.8rem;
+
+    line-height: 1.35;
+
+    color: #746455;
+}
+
+
+/* ==========================================
+   ECOGRAFIE
+========================================== */
+
+.ultrasound-moment {
+    max-width: 750px;
+
+    margin:
+        230px auto
+        50px;
+
+    text-align: center;
+}
+
+.ultrasound-title {
+    margin-bottom: 70px;
+}
+
+
+/* Rama ecografiei */
+
+.ultrasound-photo {
+    width: min(500px, 85vw);
+
+    aspect-ratio: 4 / 3;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+
+    background: #fffdf8;
+
+    border:
+        10px solid
+        #fffdf8;
+
+    box-shadow:
+        0 25px 60px
+        rgba(71, 57, 44, 0.12);
+
+    transform: rotate(-1deg);
+}
+
+.ultrasound-photo span {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ded9d1;
+
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+
+    color: #968c81;
+}
+
+
+/* Text sub ecografie */
+
+.ultrasound-message {
+    margin-top: 65px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.45rem;
+
+    line-height: 1.7;
+
+    color: #887563;
+}
+
+.ultrasound-message em {
+    color: #8daebd;
+}
+
+
+/* ==========================================
+   REVEAL LA SCROLL
+========================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   TELEFON
+========================================== */
+
+@media (max-width: 700px) {
+
+    .pregnancy-moment {
+        padding:
+            120px 18px
+            100px;
+    }
+
+    .pregnancy-intro {
+        margin-bottom: 70px;
+    }
+
+
+    /* Test */
+
+    .test-scene {
+        min-height: 260px;
+    }
+
+    .pregnancy-test {
+        height: 58px;
+    }
+
+    .test-window {
+        width: 80px;
+        height: 34px;
+
+        gap: 15px;
+    }
+
+    .test-line {
+        height: 21px;
+    }
+
+    .test-heart {
+        right: 20px;
+
+        font-size: 1.6rem;
+    }
+
+
+    /* Fotografii */
+
+    .memories {
+        padding:
+            90px 22px
+            130px;
+    }
+
+    .memory,
+    .memory-right {
+        flex-direction: column;
+
+        gap: 45px;
+
+        margin-bottom: 140px;
+    }
+
+    .photo-placeholder {
+        width: min(390px, 85vw);
+    }
+
+    .memory-text {
+        max-width: 330px;
+
+        text-align: center;
+    }
+
+    .memory-text p {
+        font-size: 1.55rem;
+    }
+
+
+    /* Ecografie */
+
+    .ultrasound-moment {
+        margin-top: 170px;
+    }
+
+    .ultrasound-title {
+        margin-bottom: 50px;
+    }
+
+}
+/* ==========================================
+   POZE REALE
+========================================== */
+
+.memory-photo {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+}
+
+
+/* Ecografie */
+
+.ultrasound-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: #f5f1ea;
+}
+
+
+/* Mic efect elegant pe fotografii */
+
+.photo-placeholder {
+    overflow: hidden;
+
+    padding: 10px;
+
+    background: #fffaf3;
+}
+
+/* ==========================================
+   TRANZIȚIE - ȘI DE ATUNCI...
+========================================== */
+
+.waiting-transition {
+    max-width: 720px;
+
+    margin: 200px auto 40px;
+
+    padding: 60px 25px;
+
+    text-align: center;
+}
+
+
+/* Titlul */
+
+.waiting-transition h2 {
+    margin-top: 15px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: #6d5e50;
+}
+
+
+/* Linia fină dintre texte */
+
+.waiting-line {
+    width: 1px;
+    height: 65px;
+
+    margin: 45px auto;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #c7b5a1,
+            transparent
+        );
+}
+
+
+/* Textul mic */
+
+.waiting-text {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.3rem;
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    color: #927e6b;
+}
+
+
+/* ==========================================
+   TELEFON
+========================================== */
+
+@media (max-width: 700px) {
+
+    .waiting-transition {
+        margin-top: 120px;
+
+        padding:
+            45px 15px
+            30px;
+    }
+
+    .waiting-transition h2 {
+        font-size: 2.35rem;
+    }
+
+    .waiting-line {
+        height: 50px;
+
+        margin: 35px auto;
+    }
+
+    .waiting-text {
+        font-size: 1.15rem;
+    }
+
+}
+
+
+
+/* ==========================================
+   MESAJ DE LA IOANA
+========================================== */
+
+.from-ioana {
+    padding: 120px 25px 90px;
+
+    background: #f8f3eb;
+
+    text-align: center;
+}
+
+.from-ioana-content {
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+
+/* Primul paragraf */
+
+.ioana-intro {
+    margin: 35px auto 0;
+
+    max-width: 570px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.45rem;
+    line-height: 1.7;
+
+    color: black;
+}
+
+
+/* Mesajul înainte de semnătură */
+
+.ioana-next {
+    margin-top: 32px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.25rem;
+    font-style: italic;
+
+    line-height: 1.6;
+
+    color: #9a8672;
+}
+
+
+/* Semnătura */
+
+.ioana-signature {
+    margin-top: 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ioana-signature span:first-child {
+    margin-bottom: 2px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+    font-style: italic;
+
+    color: #aa9682;
+}
+
+.ioana-signature strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.8rem;
+    font-weight: 400;
+    font-style: italic;
+
+    color: #6d5e50;
+}
+
+.signature-heart {
+    margin-top: 7px;
+
+    font-size: 1.3rem;
+
+    color: #9fbcc8;
+}
+
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .from-ioana {
+        padding:
+            90px 22px
+            70px;
+    }
+
+    .ioana-intro {
+        font-size: 1.25rem;
+    }
+
+    .ioana-next {
+        font-size: 1.1rem;
+    }
+
+    .ioana-signature {
+        margin-top: 35px;
+    }
+
+    .ioana-signature strong {
+        font-size: 2.4rem;
+    }
+
+}
+
+/* ==========================================
+   SCRISOAREA IOANEI
+========================================== */
+
+.ioana-letter-section {
+    padding:
+        50px 25px
+        140px;
+
+    background: #f1e8dc;
+}
+
+
+/* Foaia */
+
+.ioana-letter {
+    position: relative;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    padding:
+        75px 75px
+        65px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #faf4eb
+        );
+
+    border:
+        1px solid
+        rgba(129, 103, 78, 0.10);
+
+    box-shadow:
+        0 25px 60px
+        rgba(91, 68, 47, 0.10);
+}
+
+
+/* Inimioara de sus */
+
+.letter-decoration {
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.7rem;
+
+    color: #9fbcc8;
+}
+
+
+/* Paragrafe */
+
+.ioana-letter p {
+    margin-bottom: 25px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.25rem;
+    font-weight: 400;
+
+    line-height: 1.75;
+
+    color: #6f6053;
+}
+
+
+/* Ultimul mesaj */
+
+.ioana-letter
+.ioana-letter-ending {
+    margin-top: 40px;
+
+    font-size: 1.35rem;
+    font-style: italic;
+
+    text-align: center;
+
+    color: #806d5b;
+}
+
+
+/* Semnătura */
+
+.ioana-letter-signature {
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.ioana-letter-signature > span:first-child {
+    margin-right: 30px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1rem;
+    font-style: italic;
+
+    color: #9a8673;
+}
+
+.ioana-letter-signature strong {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 2.8rem;
+    font-weight: 400;
+    font-style: italic;
+
+    color: #67584c;
+}
+
+.letter-heart {
+    margin-right: 15px;
+
+    font-size: 1.2rem;
+
+    color: #9fbcc8;
+}
+
+
+/* ==========================================
+   SCRISOARE - TELEFON
+========================================== */
+
+@media (max-width: 700px) {
+
+    .ioana-letter-section {
+        padding:
+            35px 18px
+            100px;
+    }
+
+    .ioana-letter {
+        padding:
+            50px 28px
+            45px;
+    }
+
+    .letter-decoration {
+        margin-bottom: 30px;
+    }
+
+    .ioana-letter p {
+        margin-bottom: 22px;
+
+        font-size: 1.12rem;
+
+        line-height: 1.7;
+    }
+
+    .ioana-letter
+    .ioana-letter-ending {
+        margin-top: 35px;
+
+        font-size: 1.2rem;
+    }
+
+    .ioana-letter-signature {
+        margin-top: 40px;
+    }
+
+    .ioana-letter-signature strong {
+        font-size: 2.4rem;
+    }
+
+}
+
+
+/* ==========================================
+   SURPRIZA VIDEO
+========================================== */
+
+.video-surprise {
+    padding:
+        150px 25px
+        170px;
+
+    background: #f1e8dc;
+
+    text-align: center;
+}
+
+
+.video-surprise-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+
+.video-surprise h2 {
+    margin-top: 18px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(2.4rem, 6vw, 4rem);
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: #6d5e50;
+}
+
+
+/* Simbol video */
+
+.video-symbol {
+    width: 70px;
+    height: 70px;
+
+    margin:
+        50px auto
+        35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border:
+        1px solid
+        rgba(111, 92, 75, 0.25);
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+}
+
+
+.video-symbol span {
+    margin-left: 4px;
+
+    font-size: 1rem;
+
+    color: #806e5e;
+}
+
+
+.video-small-text {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.25rem;
+
+    font-style: italic;
+
+    color: #927f6d;
+}
+
+
+/* Link către pagina video */
+
+.video-link {
+    display: inline-block;
+
+    margin-top: 38px;
+
+    padding:
+        10px 4px;
+
+    border-bottom:
+        1px solid #9b846e;
+
+    text-decoration: none;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #786554;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.video-link span {
+    display: inline-block;
+
+    margin-left: 8px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.video-link:hover {
+    color: #4f4339;
+
+    border-color: #4f4339;
+}
+
+
+.video-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .video-surprise {
+        padding:
+            100px 22px
+            120px;
+    }
+
+    .video-surprise h2 {
+        font-size: 2.35rem;
+    }
+
+    .video-symbol {
+        width: 60px;
+        height: 60px;
+
+        margin:
+            40px auto
+            30px;
+    }
+
+    .video-small-text {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   PAGINA CU VIDEO-URI
+========================================== */
+
+.video-page {
+    margin: 0;
+
+    background: #f1e8dc;
+
+    color: #6d5e50;
+}
+
+
+/* ==========================================
+   INTRO PAGINA VIDEO
+========================================== */
+
+.video-intro {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 70px 25px;
+
+    text-align: center;
+}
+
+
+.video-intro h1 {
+    margin: 15px 0 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #65574b;
+}
+
+
+.video-intro-text {
+    margin-top: 30px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.25rem;
+    font-style: italic;
+
+    color: #8b7765;
+}
+
+
+/* Săgeata */
+
+.scroll-video {
+    margin-top: 45px;
+
+    font-size: 1.2rem;
+
+    color: #8f7965;
+
+    animation:
+        videoArrow 2s
+        ease-in-out infinite;
+}
+
+
+@keyframes videoArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+
+/* ==========================================
+   VIDEO-URI - DESIGN ELEGANT
+========================================== */
+
+.video-message {
+    width: 100%;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.video-frame {
+    width: 100%;
+    max-width: 380px;
+    margin: 25px auto 0;
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    background: #211e1c;
+
+    box-shadow: 0 14px 35px rgba(70, 52, 38, 0.12);
+}
+
+.video-frame video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    height: auto;
+
+    object-fit: contain;
+    background: #211e1c;
+}
+
+/* ==========================================
+   OPTIMIZARE PENTRU TELEFON
+========================================== */
+
+@media (max-width: 700px) {
+
+    .video-message {
+        min-height: 100svh;
+        padding: 35px 20px;
+        justify-content: center;
+    }
+
+    .video-frame {
+        width: 100%;
+        max-width: 340px;
+        margin-top: 22px;
+        border-radius: 12px;
+    }
+
+    .video-frame video {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .video-message h3 {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .video-description {
+        max-width: 320px;
+        margin: 12px auto 0;
+        line-height: 1.7;
+    }
+}
+
+
+/* Continuă povestea */
+
+.back-story {
+    display: inline-block;
+
+    margin-top: 42px;
+
+    padding:
+        10px 3px;
+
+    border-bottom:
+        1px solid #8f7965;
+
+    text-decoration: none;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #705e4f;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+.back-story:hover {
+    opacity: 0.6;
+}
+
+
+.back-story span {
+    margin-left: 8px;
+}
+
+
+
+
+/* ==========================================
+   PAGINA VIDEO - STILURI VECHI
+   Păstrăm compatibilitatea dacă există
+   elemente din vechea pagină video.
+========================================== */
+
+.video-intro {
+    min-height: 70vh;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.video-intro h1 {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+}
+
+.video-intro-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.video-ending {
+    min-height: 65vh;
+    padding: 80px 22px;
+    text-align: center;
+}
+
+
+/* ==========================================
+   INTRARE SPRE VIDEO-URI
+========================================== */
+
+.video-surprise {
+    padding: 120px 25px 140px;
+    background: #f1e8dc;
+    text-align: center;
+}
+
+.video-surprise-content {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.video-surprise h2 {
+    margin-top: 18px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.3rem, 6vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+
+    color: #65574b;
+}
+
+.video-symbol {
+    width: 64px;
+    height: 64px;
+
+    margin: 45px auto 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(101, 87, 75, 0.3);
+    border-radius: 50%;
+
+    font-size: 0.9rem;
+    color: #766353;
+}
+
+.video-small-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #8b7765;
+}
+
+.video-link {
+    display: inline-block;
+
+    margin-top: 35px;
+    padding: 10px 3px;
+
+    border-bottom: 1px solid #8f7965;
+
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #705e4f;
+}
+
+.video-link span {
+    margin-left: 8px;
+}
+
+
+/* ==========================================
+   SECȚIUNEA CU MESAJE VIDEO
+========================================== */
+
+.videos-section {
+    padding: 110px 25px 130px;
+    background: #f1e8dc;
+}
+
+.videos-intro {
+    max-width: 650px;
+    margin: 0 auto 110px;
+    text-align: center;
+}
+
+.videos-intro h2 {
+    margin-top: 15px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1;
+
+    color: #65574b;
+}
+
+.videos-intro > p:not(.section-eyebrow) {
+    margin-top: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    font-style: italic;
+
+    color: #8b7765;
+}
+
+
+/* ==========================================
+   FIECARE MESAJ VIDEO
+========================================== */
+
+.video-message {
+    width: 100%;
+    max-width: 780px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 60px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.video-number {
+    margin-bottom: 15px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+
+    color: #8f7965;
+}
+
+.video-message h3 {
+    max-width: 420px;
+    margin: 0 auto 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2;
+
+    color: #67594d;
+}
+
+.video-description {
+    max-width: 440px;
+    margin: 0 auto 20px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.8;
+
+    color: #8b7765;
+}
+
+
+/* ==========================================
+   PLAYER VIDEO
+========================================== */
+
+.video-frame {
+    width: 100%;
+    max-width: 380px;
+
+    margin: 15px auto 0;
+    padding: 0;
+
+    overflow: hidden;
+    border-radius: 12px;
+
+    background: #211e1c;
+
+    box-shadow:
+        0 14px 35px
+        rgba(70, 52, 38, 0.12);
+}
+
+.video-frame video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 3 / 4;
+
+    object-fit: contain;
+    background: #211e1c;
+}
+
+
+/* ==========================================
+   FINALUL SECȚIUNII VIDEO
+========================================== */
+
+.videos-ending {
+    max-width: 650px;
+
+    margin: 30px auto 0;
+    padding-top: 70px;
+
+    text-align: center;
+}
+
+.videos-ending h2 {
+    margin-top: 15px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+
+    color: #65574b;
+}
+
+.videos-ending > p:not(.section-eyebrow) {
+    margin-top: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+
+    color: #8b7765;
+}
+
+
+/* ==========================================
+   OPTIMIZARE PENTRU TELEFON
+========================================== */
+
+@media (max-width: 700px) {
+
+    .video-intro {
+        min-height: 70svh;
+        padding: 60px 20px;
+    }
+
+    .video-intro h1 {
+        font-size: 3.1rem;
+    }
+
+    .video-surprise {
+        padding: 90px 22px 110px;
+    }
+
+    .video-surprise h2 {
+        font-size: 2.3rem;
+    }
+
+    .videos-section {
+        padding: 90px 0 100px;
+    }
+
+    .videos-intro {
+        margin-bottom: 80px;
+        padding: 0 20px;
+    }
+
+    .videos-intro h2 {
+        font-size: 3rem;
+    }
+
+    .video-message {
+        width: 100%;
+        min-height: 100svh;
+
+        margin: 0 auto;
+        padding: 45px 22px;
+
+        justify-content: center;
+    }
+
+    .video-message h3 {
+        max-width: 330px;
+        font-size: 1.65rem;
+        margin-bottom: 12px;
+    }
+
+    .video-description {
+        max-width: 330px;
+        margin: 0 auto 15px;
+
+        font-size: 0.82rem;
+        line-height: 1.7;
+    }
+
+    .video-frame {
+        width: 100%;
+        max-width: 340px;
+
+        margin: 15px auto 0;
+        padding: 0;
+
+        border-radius: 12px;
+    }
+
+    .video-frame video {
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 3 / 4;
+        object-fit: contain;
+    }
+
+    .videos-ending {
+        padding: 70px 22px 0;
+    }
+
+    .video-ending {
+        min-height: 65svh;
+        padding: 80px 22px;
+    }
+}
+
+
+/* ==========================================
+   TELEFOANE MICI
+========================================== */
+
+@media (max-width: 380px) {
+
+    .video-message {
+        padding: 35px 18px;
+    }
+
+    .video-frame {
+        max-width: 310px;
+    }
+
+    .video-message h3 {
+        font-size: 1.5rem;
+    }
+
+    .video-description {
+        font-size: 0.78rem;
+    }
+}
+
+
+
+/* ==========================================
+   FINALUL POVEȘTII
+========================================== */
+
+.final-story {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 120px 25px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f1e8dc 0%,
+            #f5ede3 50%,
+            #eee2d5 100%
+        );
+
+    text-align: center;
+}
+
+
+.final-content {
+    max-width: 680px;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   BOTOȘEII
+========================================== */
+
+.baby-shoes {
+    height: 100px;
+
+    margin-bottom: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* Fiecare botoșel */
+
+.baby-shoe {
+    position: relative;
+
+    width: 52px;
+    height: 68px;
+
+    background: #c8dce5;
+
+    border-radius:
+        45% 45%
+        50% 50%;
+
+    box-shadow:
+        0 8px 20px
+        rgba(100, 130, 145, 0.12);
+}
+
+
+/* Talpa / partea din față */
+
+.baby-shoe::after {
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+    bottom: -9px;
+
+    width: 42px;
+    height: 26px;
+
+    background: #bdd4df;
+
+    border-radius: 50%;
+}
+
+
+/* Marginea de sus */
+
+.baby-shoe span {
+    position: absolute;
+
+    top: 8px;
+    left: 9px;
+
+    width: 34px;
+    height: 17px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.65);
+
+    border-radius: 50%;
+}
+
+
+/* Le înclinăm puțin */
+
+.shoe-left {
+    transform: rotate(-12deg);
+}
+
+.shoe-right {
+    transform: rotate(12deg);
+}
+
+
+/* ==========================================
+   TEXTE FINAL
+========================================== */
+
+.final-small {
+    margin-bottom: 14px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 5px;
+
+    color: #8f7965;
+}
+
+
+.final-story h2 {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(3rem, 8vw, 5rem);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #65574b;
+}
+
+
+/* Linia mică dintre titlu și text */
+
+.final-line {
+    width: 45px;
+    height: 1px;
+
+    margin:
+        45px auto;
+
+    background:
+        rgba(111, 92, 75, 0.30);
+}
+
+
+.final-text {
+    max-width: 560px;
+
+    margin:
+        0 auto
+        25px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.35rem;
+
+    line-height: 1.7;
+
+    color: #786757;
+}
+
+
+/* Mesajul principal */
+
+.final-wish {
+    max-width: 570px;
+
+    margin:
+        50px auto
+        0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(1.8rem, 4vw, 2.5rem);
+
+    font-style: italic;
+
+    line-height: 1.35;
+
+    color: #665649;
+}
+
+
+/* Inimioara */
+
+.final-heart {
+    margin-top: 35px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.8rem;
+
+    color: #a9cbd9;
+}
+
+
+/* Ultima semnătură */
+
+.final-signature {
+    margin-top: 25px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.05rem;
+
+    font-style: italic;
+
+    letter-spacing: 1px;
+
+    color: #9a8572;
+}
+
+
+/* ==========================================
+   FINAL - TELEFON
+========================================== */
+
+@media (max-width: 700px) {
+
+    .final-story {
+        min-height: 90vh;
+
+        padding:
+            90px 25px
+            100px;
+    }
+
+
+    .baby-shoes {
+        transform: scale(0.85);
+
+        margin-bottom: 35px;
+    }
+
+
+    .final-story h2 {
+        font-size: 3.2rem;
+    }
+
+
+    .final-line {
+        margin:
+            35px auto;
+    }
+
+
+    .final-text {
+        font-size: 1.2rem;
+    }
+
+
+    .final-wish {
+        margin-top: 40px;
+
+        font-size: 1.9rem;
+    }
+
+}
+/* ==========================================
+   VIDEO FULLSCREEN
+========================================== */
+
+/* ==========================================
+   VIDEO INTRO
+========================================== */
+
+.intro-video-fullscreen {
+    width: 100%;
+    min-height: 92vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px 4%;
+
+    box-sizing: border-box;
+
+    background: #f1e8dc;
+
+    overflow: hidden;
+}
+
+
+.intro-video-fullscreen video {
+    width: 100%;
+    max-width: 1400px;
+
+    height: 85vh;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: #000;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(70, 52, 38, 0.10);
+}
+
+
+/* Telefon */
+
+@media (max-width: 700px) {
+
+    .intro-video-fullscreen {
+        min-height: 90svh;
+
+        padding: 25px 12px;
+    }
+
+    .intro-video-fullscreen video {
+        width: 100%;
+        height: 82svh;
+
+        object-fit: contain;
+    }
+
+}
+
+
+
+/* ==========================================
+   COPERTĂ CU INIMĂ PENTRU VIDEOCLIPURI
+========================================== */
+
+.video-frame {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Coperta care ascunde playerul negru */
+
+.video-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: inherit;
+
+    cursor: pointer;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #fffaf5 0%,
+            #f7e9e2 48%,
+            #e8d2ca 100%
+        );
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Inima cu efect de volum */
+
+.video-heart {
+    display: block;
+
+    font-size: clamp(100px, 28vw, 145px);
+    line-height: 1;
+
+    color: #e7a5ab;
+
+    text-shadow:
+        1px 1px 0 #fbd2d5,
+        3px 4px 0 #d9929d,
+        6px 9px 0 #c7808c,
+        10px 16px 18px rgba(123, 64, 76, 0.22),
+        0 25px 35px rgba(123, 64, 76, 0.12);
+
+    animation: videoHeartFloat 3.5s ease-in-out infinite;
+}
+
+/* Simbolul Play */
+
+.video-cover-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(119, 91, 82, 0.35);
+    border-radius: 50%;
+
+    font-size: 15px;
+    padding-left: 3px;
+
+    color: #81695f;
+}
+
+/* Textul de sub inimă */
+
+.video-cover-text {
+    max-width: 240px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.7;
+
+    text-align: center;
+
+    color: #846f66;
+}
+
+/* Ascundem coperta după pornirea videoclipului */
+
+.video-cover.hidden {
+    display: none;
+}
+
+/* Animație foarte fină */
+
+@keyframes videoHeartFloat {
+
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-9px) scale(1.035);
+    }
+
+}
+
+/* Optimizare pentru telefon */
+
+@media (max-width: 700px) {
+
+    .video-cover {
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .video-heart {
+        font-size: 115px;
+    }
+
+    .video-cover-text {
+        font-size: 0.62rem;
+    }
+
+}
+
+/* Respectăm preferința pentru animații reduse */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .video-heart {
+        animation: none;
+    }
+
+}
+
+/* ==========================================
+   VIDEO INTRO - STIL CINEMATOGRAFIC
+========================================== */
+
+.intro-video-section {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+
+    overflow: hidden;
+
+    background: #171311;
+}
+
+/* Videoclipul ocupă întregul ecran */
+
+#introVideo {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* Strat discret pentru lizibilitatea textului */
+
+.intro-video-section::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Textul de deasupra videoclipului */
+
+.intro-video-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    color: #fffaf3;
+
+    pointer-events: none;
+}
+
+/* Textul mic, ca în fotografia de referință */
+
+.intro-video-small-text {
+    margin: 0 0 22px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* Baby Loading... */
+
+.intro-video-title {
+    margin: 0;
+
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-weight: 400;
+
+    line-height: 1.25;
+
+    color: #fffaf3;
+
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Inimioara de sub text */
+
+.intro-video-heart {
+    margin-top: 14px;
+
+    font-size: 1.5rem;
+    color: #fffaf3;
+}
+
+/* Telefon */
+
+@media (max-width: 700px) {
+
+    .intro-video-title {
+        font-size: clamp(3.5rem, 14vw, 5.5rem);
+    }
+
+    .intro-video-small-text {
+        font-size: 0.52rem;
+        letter-spacing: 2.5px;
+    }
+
+}
+
+/* =====================================
+   GALERIE FOTO - DOUĂ COLOANE
+===================================== */
+
+.photo-gallery {
+    padding: 110px 22px 130px;
+    background: #f1e8dc;
+}
+
+.gallery-intro {
+    max-width: 650px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.gallery-intro h2 {
+    margin: 18px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    color: #65574b;
+}
+
+.gallery-intro > p:not(.section-eyebrow) {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: #8b7765;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(70, 52, 38, 0.1);
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .gallery-grid img:hover {
+        transform: scale(1.025);
+    }
+}
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .photo-gallery {
+        padding: 85px 12px 100px;
+    }
+
+    .gallery-intro {
+        margin-bottom: 45px;
+        padding: 0 12px;
+    }
+
+    .gallery-intro h2 {
+        font-size: 2.6rem;
+    }
+
+    .gallery-grid {
+        gap: 10px;
+    }
+
+    .gallery-grid img {
+        border-radius: 9px;
+    }
+}
+
+
+
+
+
+
+/* =========================================
+   CUTIE 3D - VARIANTA CURATA
+========================================= */
+
+.gift-box-wrapper {
+    position: relative;
+    width: min(360px, 82vw);
+    height: 280px;
+    perspective: 1000px;
+    transition: width 1s ease, height 1s ease;
+}
+
+/* Scena 3D */
+
+.gift-box-wrapper .gift-scene {
+    position: absolute;
+    inset: 0;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: opacity 0.65s ease;
+}
+
+/* Corpul cutiei */
+
+.gift-cube {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    left: 50%;
+    top: 50%;
+    transform:
+        translate(-50%, -35%)
+        rotateX(-17deg)
+        rotateY(-28deg);
+    transform-style: preserve-3d;
+}
+
+.gift-face {
+    position: absolute;
+    backface-visibility: hidden;
+    border: 1px solid rgba(145, 116, 87, 0.15);
+}
+
+.gift-front {
+    width: 250px;
+    height: 150px;
+    background: linear-gradient(135deg, #f2e6d6, #dcc6ae);
+    transform: translateZ(75px);
+    box-shadow: inset 0 -12px 20px rgba(99, 72, 46, 0.08);
+}
+
+.gift-back {
+    width: 250px;
+    height: 150px;
+    background: #cdb69d;
+    transform: rotateY(180deg) translateZ(75px);
+}
+
+.gift-right {
+    width: 150px;
+    height: 150px;
+    left: 50px;
+    background: linear-gradient(135deg, #d7bfa5, #bfa184);
+    transform: rotateY(90deg) translateZ(125px);
+}
+
+.gift-left {
+    width: 150px;
+    height: 150px;
+    left: 50px;
+    background: #d7c1a9;
+    transform: rotateY(-90deg) translateZ(125px);
+}
+
+.gift-bottom {
+    width: 250px;
+    height: 150px;
+    top: 0;
+    background: #bca287;
+    transform: rotateX(-90deg) translateZ(75px);
+}
+
+/* Capacul 3D */
+
+.gift-box-wrapper .gift-lid {
+    position: absolute;
+    width: 270px;
+    height: 165px;
+    left: 50%;
+    top: 50%;
+    transform:
+        translate(-50%, -91%)
+        rotateX(-17deg)
+        rotateY(-28deg);
+    transform-style: preserve-3d;
+    z-index: 8;
+    transition:
+        transform 1.15s cubic-bezier(.2,.7,.2,1),
+        opacity .65s ease;
+}
+
+.gift-lid-top {
+    position: absolute;
+    width: 270px;
+    height: 165px;
+    background: linear-gradient(
+        135deg,
+        #fff9ef,
+        #e8d7c3
+    );
+    transform: rotateX(90deg) translateZ(15px);
+    border: 1px solid rgba(151, 124, 99, 0.2);
+    box-shadow: 0 5px 15px rgba(95, 72, 52, 0.12);
+}
+
+.gift-lid-front {
+    position: absolute;
+    width: 270px;
+    height: 32px;
+    top: 67px;
+    background: linear-gradient(
+        to bottom,
+        #f3e7d8,
+        #ddc5ab
+    );
+    transform: translateZ(83px);
+    border-bottom: 1px solid rgba(126, 96, 69, 0.15);
+}
+
+.gift-lid-right {
+    position: absolute;
+    width: 165px;
+    height: 32px;
+    top: 67px;
+    left: 52px;
+    background: #d2b89c;
+    transform: rotateY(90deg) translateZ(135px);
+}
+
+/* Sigiliul este atasat de capac */
+
+.gift-box-wrapper .gift-seal {
+    position: absolute;
+    left: 50%;
+    top: 85px;
+    width: 74px;
+    height: 74px;
+    transform: translate(-50%, -50%) translateZ(88px);
+    z-index: 20;
+    animation: none;
+}
+
+.gift-box-wrapper .gift-seal:hover {
+    transform:
+        translate(-50%, -50%)
+        translateZ(88px)
+        scale(1.06);
+}
+
+/* Scrisoarea este ascunsa pana la deschidere */
+
+.gift-box-wrapper .gift-letter {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* DESCHIDEREA CAPACULUI */
+
+.gift-box-wrapper.open .gift-lid {
+    transform:
+        translate(-50%, -180%)
+        rotateX(-42deg)
+        rotateY(-28deg)
+        rotateZ(-10deg);
+}
+
+.gift-box-wrapper.open .gift-seal {
+    animation: none;
+    opacity: 1;
+}
+
+/* APARITIA SCRISORII */
+
+.gift-box-wrapper.show-letter {
+    width: min(520px, 92vw);
+    height: 440px;
+}
+
+.gift-box-wrapper.show-letter .gift-scene {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.gift-box-wrapper.show-letter .gift-letter {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+
+    width: 100%;
+    height: 420px;
+    left: 0;
+    top: 0;
+    bottom: auto;
+
+    padding: 45px 38px;
+    z-index: 50;
+
+    animation: showLetterCard 1s ease forwards;
+}
+
+.gift-box-wrapper.show-letter .letter-content {
+    opacity: 1;
+}
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+
+    .gift-box-wrapper {
+        width: min(320px, 86vw);
+        height: 270px;
+    }
+
+    .gift-box-wrapper .gift-scene {
+        transform: scale(.82);
+        transform-origin: center center;
+    }
+
+    .gift-box-wrapper.show-letter {
+        width: 92vw;
+        height: 430px;
+    }
+
+    .gift-box-wrapper.show-letter .gift-letter {
+        height: 410px;
+        padding: 35px 22px;
+    }
+}
+
+
+
+
+
+
